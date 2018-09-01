@@ -17,7 +17,7 @@ use Encode;
 use Carp;
 
 ## Here we set our plugin version
-our $VERSION = "0.9.0";
+our $VERSION = "0.9.1";
 
 ## Here is our metadata, some keys are required, some are optional
 our $metadata = {
@@ -25,7 +25,7 @@ our $metadata = {
     author          => 'Indranil Das Gupta',
     date_authored   => '2018-08-22',
     date_updated    => '2018-09-01',
-    minimum_version => '17.11.05.000',
+    minimum_version => '17.11.08.000',
     maximum_version => undef,
     version         => $VERSION,
     description     => 'This plugin implements the AskALibrarian / reader feedback via OPAC feature',
