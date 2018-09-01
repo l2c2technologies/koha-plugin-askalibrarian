@@ -28,7 +28,7 @@ AskALibrarian plugin generates email-based user notifications. So, we must also 
 
 **N.B.** Koha will install the KPZ file into `/var/lib/koha/<instance_name>` directory. For the example used in this README, our `<instance_name>` is _covas_. Your instance name will be different. So you **must** remember to change it to your Koha instance name when applying the next step. 
 
-Since the feedback form needs to access the `askalibrarian.pl` from the OPAC and we do not want it to set off false XSS attack alarms, we have to add the following change to the Apache configuration at `/etc/koha/apache-shared-opac.conf`. 
+Since the feedback form needs to access the `askalibrarian.pl` from the OPAC and we do not want it to set off false XSS attack alarms, we have to add the following change to the Apache configuration of our Koha instance _(**hint**: look for `/etc/apache/sites-available/<instance_name.conf>`)_ . 
 
 ````
 ScriptAlias /askalibrarian.pl "/var/lib/koha/covas/plugins/Koha/Plugin/Com/L2C2Technologies/AskALibrarian/askalibrarian.pl"
