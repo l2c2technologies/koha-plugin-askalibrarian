@@ -1,0 +1,3 @@
+name,usertype,phone,email,comment,ipaddr,timestamp
+[% FOREACH r IN results_loop %]"[% r.name %]","[% r.usertype %]","[% r.phone %]","[% r.email %]","[% r.comment %]","[% r.ipaddr %]","[% r.timestamp %]" 
+[% END %]

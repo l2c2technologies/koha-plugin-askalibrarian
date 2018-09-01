@@ -1,0 +1,7 @@
+$(document).ready(function() {
+    var modalInsert = '<li class="dropdown">';
+    modalInsert += '<a href="#" role="button" data-toggle="modal" data-target="#feedbackModal">';
+    modalInsert += '<i class="fa fa-envelope-o" aria-hidden="true"></i> Ask A Librarian</a>';
+    modalInsert += '</li>';
+    $( '#header-region > div.navbar.navbar-inverse.navbar-static-top > div > div > ul' ).append( modalInsert ); 
+});

@@ -1,0 +1,37 @@
+[% INCLUDE 'doc-head-open.inc' %]
+<title>Koha: AskALibrarian Plugin Configuration</title>
+[% INCLUDE 'doc-head-close.inc' %]
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; AskALibrarian Configuration</div>
+
+<div id="doc3">
+    <div class="yui-b">
+        <img src="[% PLUGIN_PATH %]/logo.png" />
+        <h1>Configure AskALibrarian plugin</h1>
+
+        <p><br/><em>Enabling this plugin adds JavaScript code to your <strong>OpacUserJS</strong> and HTML markup for the modal to <strong>OpacHeader</strong> system preferences. When you disable the plugin, these code are removed from both the sys prefs.</em></p>
+        <p><br/><em>If you wish to use the optional field "User Type" make sure that the <a href="/cgi-bin/koha/admin/systempreferences.pl?op=add_form&searchfield=UserDesignation">UserDesignation</a> lcoal use preference is defined correctly before enabling the plugin</em></p>
+
+        <form method="get">
+            <input type="hidden" name="class" value="[% CLASS %]"/>
+            <input type="hidden" name="method" value="[% METHOD %]"/>
+
+            <fieldset class="rows">
+                <ol>
+                    <li>
+                        <input type="checkbox" id="plugin_status" name="plugin_status" value="enabled" [% IF plugin_active %]checked[% END %] />&nbsp;&nbsp;Enable AskALibrarian plugin</input>
+                    </li>
+                </ol>
+            </fieldset>
+            <fieldset class="action">
+                <input type="hidden" name="save" value="1" />
+                <input type="submit" value="Save configuration" />
+            </fieldset>
+        </form>
+    </div>
+
+[% INCLUDE 'intranet-bottom.inc' %]

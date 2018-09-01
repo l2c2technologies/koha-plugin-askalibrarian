@@ -1,0 +1,50 @@
+[% USE Koha %]
+[% INCLUDE 'doc-head-open.inc' %]
+ <title>Koha: AskALibrarian Plugin Report - Feedback</title>
+
+[% INCLUDE 'doc-head-close.inc' %]
+[% INCLUDE 'calendar.inc' %]
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; AskALibrarian Report - Feedback</div>
+
+<div id="doc3">
+    <div class="yui-b">
+	<h1>Display user feedback submitted via the OPAC</h1>
+
+	<form method="get">
+                <input type="hidden" name="class" value="[% CLASS %]"/>
+                <input type="hidden" name="method" value="[% METHOD %]"/>
+
+                <fieldset class="rows">
+                    <ol>
+                        <li>
+                            <label for="datafrom">From date:</label>
+                            <input type="text" id="datefrom" name="datefrom" maxlength="10" size="10" class="datepicker" />
+                            <div class="hint">[% INCLUDE 'date-format.inc' %]</div>
+                        </li>
+                        <li>
+                            <label for="datato">To date:</label>
+                            <input type="text" id="dateto" name="dateto" maxlength="10" size="10" class="datepicker" />
+                            <div class="hint">[% INCLUDE 'date-format.inc' %]</div>
+                        </li>
+                        <li>
+                            <label for="output">Output as:</label>
+                            <select name="output">
+                                <option value="screen">On-screen (HTML)</option>
+                                <option value="csv">CSV File</option>
+                            </select>
+                        </li>
+                    <ol>
+                </fieldset>
+                <fieldset class="action">
+                    <input type="submit" value="Run the report" />
+                </fieldset>
+
+	</form>
+     </div>
+
+[% INCLUDE 'intranet-bottom.inc' %]

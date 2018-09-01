@@ -1,0 +1,29 @@
+[% USE Koha %]
+<!-- feedback modal hidden by default -->
+<div id="feedbackModal" class="modal fade hide" tabindex="-1" role="dialog" aria-labelledby="modalFeedbackLabel" aria-hidden="true" style="position: absolute !important;">
+    <div class="modal-header">
+        <button type="button" class="closebtn" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="modalFeedbLabel">Ask A Librarian</h3>
+    </div>
+        <div class="modal-body">                 
+            <fieldset class="brief">
+                <label for="name">Name:</label><input type="text" id="name" name="name" />
+                [% IF Koha.Preference('UserDesignation') && Koha.Preference('UserDesignation').size %]
+                    <label for="designation">User type:</label>
+                    <select id="userdesignation" name="userdesignation">
+                        <option value=""></option>
+                        [% FOREACH ud IN Koha.Preference('UserDesignation').split('\|') %]
+                            <option value="[% ud %]">[% ud %]</option>
+                        [% END %]
+                    </select>
+                [% END %] <!-- check if UserDesignation is setup -->
+                <label for="phone">Phone No:</label><input type="text" id="phone" name="phone" />
+                <label for="email">Email:</label><input type="text" id="email" name="email" />
+                <label for="comment">Comment:</label><textarea id="comment" name="comment" rows="3" style="width: 97%;"></textarea>
+            </fieldset>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" id="feedbackModalSubmit" class="btn btn-primary" value="Submit"/>
+            <a href="#" data-dismiss="modal" aria-hidden="true" class="cancel">Cancel</a>
+        </div>
+</div>  <!-- #feedbackModal  -->

@@ -1,0 +1,42 @@
+[% INCLUDE 'doc-head-open.inc' %]
+ <title>Koha: AskALibrarian Plugin Report - Feedback</title>
+[% INCLUDE 'doc-head-close.inc' %]
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; AskALibrarian Report - Feedback</div>
+
+<div id="doc3">
+<h1>Feedback received</h1>
+
+<table border=1>
+  <thead>
+    <tr> 
+      <th style="width: 10% !important;">Name</th>
+      <th style="width: 10% !important;">UserType</th>
+      <th style="width: 7% !important;">Phone No.</th>  
+      <th style="width: 15% !important;">E-mail</th>
+      <th style="width: 40% !important;">Comment</th>
+      <th style="width: 7% !important;">IP address</th>
+      <th style="width: 10% !important;">Timestamp</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    [% FOREACH r IN results_loop %]
+      <tr>
+        <td>[% r.name %]</td>
+        <td>[% r.usertype %]</td>
+        <td>[% r.phone %]</td>
+        <td>[% r.email %]</td>
+        <td>[% r.comment %]</td> 
+        <td>[% r.ipaddr %]</td>
+        <td>[% r.timestamp %]</td>
+      </tr>
+    [% END %]
+  </tbody>
+</table> 
+
+[% INCLUDE 'intranet-bottom.inc' %]
